@@ -15,7 +15,7 @@ public class SystemMonitorPlugin : MonoBehaviour
     private static extern void _startTracking();
 
     [DllImport("__Internal")]
-    private static extern string _stopTracking();
+    private static extern System.IntPtr _stopTracking();
 
     public void Awake()
     {
@@ -35,7 +35,9 @@ public class SystemMonitorPlugin : MonoBehaviour
     {
         if (Application.platform == RuntimePlatform.IPhonePlayer)
         {
-            string result = _stopTracking();
+            System.IntPtr resultPtr = _stopTracking();
+            string result = Marshal.PtrToStringUTF8(resultPtr);
+            Debug.Log(result);
             output.text = result;
         }
     }
