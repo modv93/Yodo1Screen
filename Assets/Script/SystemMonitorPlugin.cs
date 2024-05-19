@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Runtime.InteropServices;
 using UnityEngine.UI;
+using TMPro;
 
 public class SystemMonitorPlugin : MonoBehaviour
 {
     [SerializeField] private Button startBtn;
     [SerializeField] private Button stopBtn;
+    [SerializeField] private TextMeshProUGUI output;
 
     [DllImport("__Internal")]
     private static extern void _startTracking();
@@ -34,7 +36,7 @@ public class SystemMonitorPlugin : MonoBehaviour
         if (Application.platform == RuntimePlatform.IPhonePlayer)
         {
             string result = _stopTracking();
-            Debug.Log(result);
+            output.text = result;
         }
     }
 }
