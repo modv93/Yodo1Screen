@@ -277,7 +277,7 @@ MonoBehaviour:
   startBtn: {fileID: 208534399}
   stopBtn: {fileID: 1693521739}
   output: {fileID: 1773472292}
-  error: {fileID: 0}
+  error: {fileID: 684809683}
 --- !u!4 &610227473
 Transform:
   m_ObjectHideFlags: 0
