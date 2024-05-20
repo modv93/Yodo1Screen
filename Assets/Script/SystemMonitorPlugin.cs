@@ -55,8 +55,8 @@ public class SystemMonitorPlugin : MonoBehaviour
         Debug.Log($"RAM - Min: {resultDict.ram.min} MB, Max: {resultDict.ram.max} MB, Avg: {resultDict.ram.avg} MB \n");
 
         output.text = $"CPU - Min: {resultDict.cpu.min}%, Max: {resultDict.cpu.max}%, Avg: {resultDict.cpu.avg}% \n" +
-            ($"GPU - Min: {resultDict.gpu.min}%, Max: {resultDict.gpu.max}%, Avg: {resultDict.gpu.avg}% \n") +
-            ($"RAM - Min: {resultDict.ram.min} MB, Max: {resultDict.ram.max} MB, Avg: {resultDict.ram.avg} MB \n");
+            ($"GPU - Min: {resultDict.gpu.min * 100}%, Max: {resultDict.gpu.max * 100}%, Avg: {resultDict.gpu.avg * 100}% \n") +
+            ($"RAM - Min: {resultDict.ram.min /(1024*1024)} MB, Max: {resultDict.ram.max / (1024 * 1024)} MB, Avg: {resultDict.ram.avg / (1024 * 1024)} MB \n");
 
     }
 
